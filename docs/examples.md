@@ -1,0 +1,134 @@
+# Examples
+
+These examples show how `ai-coding-collaboration` should shape an AI coding session.
+
+## L0: Small UI fix
+
+### User prompt
+
+```text
+Use $ai-coding-collaboration.
+
+Fix the profile stats card. The third metric wraps to a second row on mobile.
+```
+
+### Expected skill behavior
+
+- Classify as L0.
+- Inspect the affected component and layout CSS.
+- Make the smallest possible change.
+- Run typecheck or the relevant build check if available.
+- Avoid generating a large implementation plan.
+
+### Expected output shape
+
+```text
+Goal: Fix profile stats card wrapping.
+Changed: one layout file/component.
+Validated: typecheck/build or manual screenshot.
+Risks: none or one clear note.
+Conclusion: can continue / merge-ready.
+```
+
+## L1: Small feature
+
+### User prompt
+
+```text
+Use $ai-coding-collaboration.
+
+Add a "copy recovery code" button to the profile page.
+```
+
+### Expected skill behavior
+
+- Classify as L1.
+- Produce a compact task card.
+- Check affected page, utility functions, and clipboard behavior.
+- Implement only the button and feedback state.
+- Validate click behavior and fallback.
+
+### Expected output shape
+
+```text
+Task Card:
+- Goal
+- Scope
+- Explicit non-goals
+- Files
+- Acceptance criteria
+
+Final Summary:
+- Changed
+- Validated
+- Risks
+- Conclusion
+```
+
+## L2: Module-level user identity work
+
+### User prompt
+
+```text
+Use $ai-coding-collaboration.
+
+Implement persistent anonymous user identity without login. Each user's events and draw records must remain isolated.
+```
+
+### Expected skill behavior
+
+- Classify as L2.
+- Provide a short plan before implementation.
+- Analyze backend API, middleware, database, frontend API, page display, and tests.
+- Implement in small steps.
+- Validate different user identities cannot see each other's data.
+
+### Expected output shape
+
+```text
+Short Plan:
+1. Data model/migration
+2. Request context identity resolution
+3. User profile API
+4. Frontend profile binding
+5. Tests and isolation checks
+
+Validation:
+- no-cookie creates user
+- same cookie reuses user
+- different cookie isolates events/history/stats
+```
+
+## Review task
+
+### User prompt
+
+```text
+Use $ai-coding-collaboration.
+
+Review this change before merge.
+```
+
+### Expected skill behavior
+
+- Inspect the changed files.
+- Focus on correctness, missing validation, API/DTO/config/data impact, and regressions.
+- Avoid generic advice.
+
+### Expected output shape
+
+```text
+Conclusion: merge-ready / can continue / needs small fix / must rework
+
+Blocker:
+- ...
+
+Major:
+- ...
+
+Minor:
+- max 3
+
+Next step:
+- ...
+```
