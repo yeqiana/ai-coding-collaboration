@@ -2,26 +2,27 @@
 
 ## 50-character version
 
-AI Coding Collaboration: a Codex skill for task grading, minimal-diff implementation, validation discipline, and concise handoff summaries.
+AI Coding Guardrails: keep AI coding scoped, validated, and concise.
 
 ## 200-character version
 
-I packaged my AI coding collaboration workflow into a Codex skill. It helps classify tasks into L0/L1/L2/L3, avoid oversized diffs, check missing impacts, validate P0 paths, and end with an evidence-based executive summary.
+AI Coding Guardrails is a practical skill for Codex, Claude Code, and Cursor. It classifies tasks into L0/L1/L2/L3, keeps diffs small, checks missing impacts, validates P0 paths, and ends with an evidence-based executive summary.
 
 Repository: https://github.com/yeqiana/ai-coding-collaboration
 
 ## Chinese short post
 
-我把平时约束 AI 写代码的流程沉淀成了一个 Codex skill：AI Coding Collaboration。
+我做了一个 AI 编程防跑偏 Skill：AI Coding Guardrails。
 
 它主要解决几个问题：
 
-- 小任务被 AI 做成大重构
+- 小任务被 AI 做成大重构 / 大方案
 - 改动范围失控
 - 接口 / DTO / 数据库 / 测试影响漏掉
-- 最后只说“完成了”，但没有验证证据
+- 没跑测试却说“完成了”
+- Review 和交付总结太长、太空
 
-这个 skill 会让 AI 先判断任务属于 L0/L1/L2/L3，再选择对应流程，按最小 Diff 实施，并用 P0/P1/P2 做验证分级。
+这个 Skill 会让 AI 先判断任务属于 L0/L1/L2/L3，再选择对应流程，按最小 Diff 实施，做漏项自检，并用 P0/P1/P2 做验证分级。
 
 仓库： https://github.com/yeqiana/ai-coding-collaboration
 
@@ -30,15 +31,16 @@ Repository: https://github.com/yeqiana/ai-coding-collaboration
 Title:
 
 ```text
-我把 AI 编程协作规范做成了一个 Codex Skill
+我做了一个 AI Coding 防跑偏 Skill
 ```
 
 Structure:
 
 ```text
-1. 为什么需要这个 skill
+1. 为什么需要这个 Skill
    - AI 容易过度设计
    - 小任务输出大方案
+   - 顺手改无关文件
    - 改代码但不验证
    - 总结缺少证据链
 
@@ -62,12 +64,13 @@ Structure:
 
 5. 如何安装和使用
    - git clone 到 ~/.codex/skills
-   - Use $ai-coding-collaboration ...
+   - Use ai-coding-guardrails.
+   - Codex 当前也可以用 Use $ai-coding-collaboration.
 
 6. 后续计划
    - 更多示例
-   - GitHub Actions 校验
-   - 中英文 README
+   - Release v0.1.0
+   - 提交到 awesome-agent-skills / awesome-codex-skills
 ```
 
 Repository:

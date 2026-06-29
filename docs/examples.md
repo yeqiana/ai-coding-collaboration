@@ -1,6 +1,8 @@
 # Examples
 
-These examples show how `ai-coding-collaboration` should shape an AI coding session.
+These examples show how AI Coding Guardrails should shape an AI coding session.
+
+Codex users can keep invoking the existing skill identifier: `ai-coding-collaboration`.
 
 ## L0: Small UI fix
 

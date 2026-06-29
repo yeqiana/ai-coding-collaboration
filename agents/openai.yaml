@@ -1,7 +1,7 @@
 interface:
-  display_name: "AI Coding Collaboration"
-  short_description: "Classify, implement, validate, and summarize coding tasks."
-  default_prompt: "Use $ai-coding-collaboration to classify this coding task, implement with minimal diff, validate it, and summarize the result."
+  display_name: "AI Coding Guardrails"
+  short_description: "Keep AI coding scoped, minimal, validated, and concise."
+  default_prompt: "Use $ai-coding-collaboration as AI Coding Guardrails: classify this coding task, keep the diff minimal, validate P0 behavior, and summarize the result."
 
 policy:
   allow_implicit_invocation: true

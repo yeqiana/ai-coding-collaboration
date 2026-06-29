@@ -1,13 +1,15 @@
 ---
 name: ai-coding-collaboration
-description: Use when performing software development collaboration tasks that need task-size classification, scoped analysis before implementation, minimal-diff code changes, validation discipline, review output, testing checklists, and concise executive summaries. Trigger for coding tasks, bug fixes, feature work, code review, test/acceptance planning, implementation handoff, or generating project agent rules from the AI Coding execution specification.
+description: Use when coding agents need guardrails against overengineering, scope creep, missing validation, noisy handoffs, or unverified completion. Classifies tasks by size, enforces minimal diff, runs impact and self-checks, and ends with concise evidence-based summaries. Trigger for coding tasks, bug fixes, feature work, code review, test/acceptance planning, implementation handoff, or generating project agent rules from the AI Coding execution specification.
 ---
 
-# AI Coding Collaboration
+# AI Coding Guardrails
 
 ## Purpose
 
-Apply a pragmatic coding collaboration workflow: classify the task, choose the lightest sufficient process, keep diffs small, validate core behavior, and end with a concise evidence-based summary.
+Apply pragmatic guardrails for AI coding work: classify the task, choose the lightest sufficient process, keep diffs small, validate core behavior, and end with a concise evidence-based summary.
+
+This skill is packaged as **AI Coding Guardrails**. The repository and Codex skill identifier may still appear as `ai-coding-collaboration` for compatibility.
 
 For the full source specification, read `references/ai-coding-execution-spec-v1.md` when the user asks for the complete standard, wants to generate derived rule files, or the task is ambiguous enough that the condensed rules below are insufficient.
 
