@@ -81,11 +81,12 @@ The agent must not say `merge-ready` when P0 validation was not run or failed.
 Every implementation or review ends with:
 
 ```text
-Goal:
-Changed:
-Validated:
-Risks:
-Conclusion:
+【目标】
+【改动文件】
+【自测结果】
+【风险】
+【必须验收】
+【结论】
 ```
 
 No long generic handoff.
@@ -109,7 +110,7 @@ Example for Claude Code:
 Then ask:
 
 ```text
-Use ai-coding-guardrails.
+Use AI Coding Guardrails.
 
 Task:
 Add an export button to the user list page.
@@ -127,6 +128,31 @@ Codex users can also invoke the existing skill name:
 ```text
 Use $ai-coding-collaboration.
 ```
+
+## Compatibility
+
+**AI Coding Guardrails** is the product name. `ai-coding-collaboration` is the stable skill identifier kept for compatibility.
+
+- Codex: invoke `$ai-coding-collaboration`.
+- Other coding tools: install the skill according to the tool's skill discovery convention, then ask the agent to apply AI Coding Guardrails.
+
+The skill does not install a runtime, manage agent memory, or replace a project specification system. For L2/L3 work, pair it with an existing spec workflow such as OpenSpec when persistent change records are required.
+
+## Quality Checks
+
+Run the repository checks before publishing a rule change:
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File scripts/test-skill.ps1
+```
+
+For PowerShell 7 on Windows, macOS, or Linux:
+
+```powershell
+pwsh -NoProfile -File scripts/test-skill.ps1
+```
+
+The static checks validate UTF-8 source files, required rule sections, canonical naming, local Markdown links, and behavior-contract coverage. They do not execute an AI agent or prove model behavior. Use the [manual behavior evaluation](evals/manual-evaluation.md) before claiming behavior-contract acceptance. See [the implementation plan](docs/项目补强实施方案.md) for the scope and acceptance criteria.
 
 ## Example: before vs after
 
@@ -161,11 +187,12 @@ Plan:
 4. Run build/typecheck if available
 
 Executive Summary:
-Goal: add export button to user list.
-Changed: UserList page action area.
-Validated: checked page render path; build not run because ...
-Risks: export API behavior not changed.
-Conclusion: can continue / needs small fix / merge-ready
+【目标】add export button to user list.
+【改动文件】UserList page action area.
+【自测结果】checked page render path; build not run because ...
+【风险】export API behavior not changed.
+【必须验收】verify the page entry and run build/typecheck when available.
+【结论】can continue / needs small fix / merge-ready
 ```
 
 ## When to use

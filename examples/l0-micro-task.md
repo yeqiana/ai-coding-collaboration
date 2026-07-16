@@ -21,9 +21,10 @@ Change the empty-state copy on the settings page.
 ## Expected Summary
 
 ```text
-Goal: update settings empty-state copy.
-Changed: settings page empty-state text.
-Validated: inspected the changed render path; no build was run because this is copy-only.
-Risks: page rendering was not checked in a browser.
-Conclusion: can continue.
+【目标】update settings empty-state copy.
+【改动文件】settings page empty-state text.
+【自测结果】inspected the changed render path; no build was run because this is copy-only.
+【风险】page rendering was not checked in a browser.
+【必须验收】confirm the page render path when a browser is available.
+【结论】can continue.
 ```

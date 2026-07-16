@@ -24,9 +24,10 @@ Run typecheck and verify the page entry.
 ## Executive Summary
 
 ```text
-Goal: review export button implementation.
-Changed: no code changed in review.
-Validated: reviewed diff and implementation notes.
-Risks: route/page entry not verified.
-Conclusion: needs small fix.
+【目标】review export button implementation.
+【改动文件】no code changed in review.
+【自测结果】reviewed diff and implementation notes.
+【风险】route/page entry not verified.
+【必须验收】run typecheck and verify the page entry.
+【结论】needs small fix.
 ```

@@ -95,11 +95,12 @@ DTO / 类型
 每轮结束必须输出：
 
 ```text
-Goal:
-Changed:
-Validated:
-Risks:
-Conclusion:
+【目标】
+【改动文件】
+【自测结果】
+【风险】
+【必须验收】
+【结论】
 ```
 
 如果没有验证核心路径，不能写“merge-ready / 可合并”。
@@ -153,3 +154,26 @@ Codex 用户也可以继续使用当前仓库 Skill 名：
 ## 一句话
 
 > 让 AI Coding 从“看起来完成了”变成“有证据地完成了”。
+
+## 调用兼容性
+
+**AI Coding Guardrails** 是产品名称，`ai-coding-collaboration` 是为兼容保留的稳定 Skill 标识。
+
+- Codex：使用 `$ai-coding-collaboration` 调用。
+- 其他工具：按其 Skill 发现方式安装后，要求 Agent 应用 AI Coding Guardrails。
+
+它不提供 Agent 运行时、长期记忆或项目规格库。L2/L3 任务需要持久化变更规格时，可与现有 OpenSpec 工作流配合使用。
+
+## 发布校验
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File scripts/test-skill.ps1
+```
+
+PowerShell 7、macOS 或 Linux 使用：
+
+```powershell
+pwsh -NoProfile -File scripts/test-skill.ps1
+```
+
+该静态命令校验 UTF-8、关键规则、调用名、本地 Markdown 链接和行为契约覆盖，不会执行 AI Agent 或证明模型行为。声称行为契约通过前，必须按[人工行为评测](evals/manual-evaluation.md)执行。补强范围与验收标准见 [项目补强实施方案](docs/项目补强实施方案.md)。

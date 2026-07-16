@@ -23,9 +23,10 @@ Add email verification to the existing login flow.
 ## Expected Summary
 
 ```text
-Goal: add email verification to login.
-Changed: auth service, verification endpoint, login UI state, tests.
-Validated: auth tests passed; login route checked manually.
-Risks: email provider failure path only covered by mocked test.
-Conclusion: can continue.
+【目标】add email verification to login.
+【改动文件】auth service, verification endpoint, login UI state, tests.
+【自测结果】auth tests passed; login route checked manually.
+【风险】email provider failure path only covered by mocked test.
+【必须验收】verify the real email-provider failure path before release.
+【结论】can continue.
 ```

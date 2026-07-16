@@ -1,7 +1,7 @@
 interface:
   display_name: "AI Coding Guardrails"
   short_description: "Keep AI coding scoped, minimal, validated, and concise."
-  default_prompt: "Use $ai-coding-collaboration as AI Coding Guardrails: classify this coding task, keep the diff minimal, validate P0 behavior, and summarize the result."
+  default_prompt: "Use $ai-coding-collaboration as AI Coding Guardrails: classify this coding task, apply risk modifiers, keep the diff minimal, validate P0 behavior with evidence, and finish with 【目标】、【改动文件】、【自测结果】、【风险】、【必须验收】、【结论】."
 
 policy:
   allow_implicit_invocation: true

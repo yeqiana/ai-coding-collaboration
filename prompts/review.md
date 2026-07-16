@@ -1,6 +1,6 @@
 # Review Prompt
 
-Use the ai-coding-guardrails skill to review this change.
+Use AI Coding Guardrails to review this change. In Codex, invoke `$ai-coding-collaboration`.
 
 Check:
 - requirement match
@@ -17,4 +17,4 @@ Output only:
 - Major
 - Minor, max 3
 - Next step
-- Executive Summary
+- final summary using `【目标】`、`【改动文件】`、`【自测结果】`、`【风险】`、`【必须验收】`、`【结论】`

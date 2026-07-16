@@ -23,9 +23,10 @@ Add an export button to the user list page.
 ## Expected Summary
 
 ```text
-Goal: add export button to user list.
-Changed: user list page action area.
-Validated: checked render path; build not run because ...
-Risks: export API behavior not changed.
-Conclusion: can continue.
+【目标】add export button to user list.
+【改动文件】user list page action area.
+【自测结果】checked render path; build not run because ...
+【风险】export API behavior not changed.
+【必须验收】verify the page entry and run build/typecheck when available.
+【结论】can continue.
 ```

@@ -1,6 +1,6 @@
 # Coding Prompt
 
-Use the ai-coding-guardrails skill.
+Use AI Coding Guardrails. In Codex, invoke `$ai-coding-collaboration`.
 
 Task:
 [describe task]
@@ -17,6 +17,8 @@ Required output:
 3. Implementation plan
 4. Changes made
 5. Validation result
-6. Executive Summary
+6. Final summary using `【目标】`、`【改动文件】`、`【自测结果】`、`【风险】`、`【必须验收】`、`【结论】`
 
 Do not mark the work as merge-ready if P0 validation was not run or failed.
+
+For L2/L3 work, first check risk modifiers and unresolved decisions. Use an existing OpenSpec workflow when the repository requires a persistent change record.

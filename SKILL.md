@@ -11,7 +11,7 @@ Apply pragmatic guardrails for AI coding work: classify the task, choose the lig
 
 This skill is packaged as **AI Coding Guardrails**. The repository and Codex skill identifier may still appear as `ai-coding-collaboration` for compatibility.
 
-For the full source specification, read `references/ai-coding-execution-spec-v1.md` when the user asks for the complete standard, wants to generate derived rule files, or the task is ambiguous enough that the condensed rules below are insufficient.
+For the full source specification, read `references/ai-coding-execution-spec-v1.md` when the user asks for the complete standard, wants to generate derived rule files, or the task is ambiguous enough that the condensed rules below are insufficient. That specification is normative; prompts and examples are supporting material.
 
 ## Task Level Decision
 
@@ -25,6 +25,23 @@ Choose the lowest level that safely covers the request:
 | L3 project task | New project, major refactor, core architecture or risky database changes | PRD/architecture/backlog -> stepwise implementation -> release checklist |
 
 Do not run L2/L3 ceremony for L0/L1 work. Do not skip analysis for L2/L3 work.
+
+## Risk Modifiers
+
+Task size is not the only decision. Upgrade the workflow to at least L2 and ask for explicit scope confirmation before implementation when a change affects any of the following:
+
+- authentication, authorization, secrets, or security controls
+- payments, billing, or other irreversible external actions
+- production configuration, data deletion, migrations, or backfills
+- public APIs, shared contracts, or data isolation
+
+State the modifier and the reason for the upgrade. Do not treat a small diff as low risk merely because it changes few lines.
+
+## Ambiguity Gate
+
+For L2/L3 work, pause before planning when an unresolved product decision, acceptance criterion, ownership boundary, or irreversible trade-off could change the implementation. Inspect the codebase first, then ask one focused question at a time with a recommended default.
+
+Do not run a grilling session by default for L0/L1 work. If the user has supplied clear acceptance criteria, proceed without extra questions.
 
 ## Non-Negotiable Rules
 
@@ -72,6 +89,18 @@ Use P0/P1/P2 validation instead of long test lists:
 
 Never mark work as merge-ready when P0 validation was not run or failed. If tests are unavailable, report manual validation or state unverified.
 
+## Validation Evidence
+
+For every P0 item, report the command or manual path, its result, and any coverage limitation. A statement such as "tests passed" without the command or observable result is not validation evidence.
+
+## OpenSpec Cooperation
+
+This skill governs execution quality; it does not replace persistent change specifications.
+
+- L0/L1: use Guardrails only unless the repository already requires a specification.
+- L2/L3: keep a short decision record. When the repository uses OpenSpec, work through its proposal/apply/archive workflow and use this skill for task level, risk, minimal diff, and validation evidence.
+- Do not create an `openspec/` directory or add a new workflow tool unless the user explicitly requests it.
+
 ## Post-Implementation Self-Check
 
 Before final handoff, answer internally and report material gaps:
@@ -101,11 +130,12 @@ Do not produce broad generic review advice.
 End implementation or review turns with a short summary:
 
 ```text
-Goal: one sentence
-Changed: key files and purpose
-Validated: commands/manual checks run
-Risks: max 3
-Conclusion: can continue / merge-ready / needs small fix / must rework
+【目标】one sentence
+【改动文件】key files and purpose
+【自测结果】commands/manual checks run
+【风险】max 3
+【必须验收】max 5 items
+【结论】can continue / merge-ready / needs small fix / must rework
 ```
 
 Keep it concise. Do not claim merge-ready when there are unverified core paths.

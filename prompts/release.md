@@ -1,6 +1,6 @@
 # Release Prompt
 
-Use the ai-coding-guardrails skill to prepare release validation.
+Use AI Coding Guardrails to prepare release validation. In Codex, invoke `$ai-coding-collaboration`.
 
 Release scope:
 [describe release scope]
@@ -17,4 +17,4 @@ Output:
 - P0 validation checklist
 - Known risks, max 3
 - Follow-ups, max 3
-- Executive Summary
+- final summary using `【目标】`、`【改动文件】`、`【自测结果】`、`【风险】`、`【必须验收】`、`【结论】`

@@ -25,11 +25,12 @@ Fix the profile stats card. The third metric wraps to a second row on mobile.
 ### Expected output shape
 
 ```text
-Goal: Fix profile stats card wrapping.
-Changed: one layout file/component.
-Validated: typecheck/build or manual screenshot.
-Risks: none or one clear note.
-Conclusion: can continue / merge-ready.
+【目标】Fix profile stats card wrapping.
+【改动文件】one layout file/component.
+【自测结果】typecheck/build or manual screenshot.
+【风险】none or one clear note.
+【必须验收】confirm the mobile render path.
+【结论】can continue / merge-ready.
 ```
 
 ## L1: Small feature
